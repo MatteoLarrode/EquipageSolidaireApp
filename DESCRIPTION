@@ -13,3 +13,4 @@ LazyData: true
 RoxygenNote: 7.1.1
 URL: https://github.com/MatteoLarrode/EquipageSolidaireApp.git
 BugReports: https://github.com/MatteoLarrode/EquipageSolidaireApp.git/issues
+Suggests: tinytest
