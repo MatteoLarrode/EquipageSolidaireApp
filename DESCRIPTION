@@ -3,7 +3,7 @@ Title: L'Equipage Solidaire: The App
 Version: 0.0.0.9000
 Authors@R: person('Matteo', 'Larrode', email = 'matteo@equipagesolidaire.fr', role = c('cre', 'aut'))
 Description: An open access web app to explore the impact of L'Equipage Solidaire in fighting student precariousness in France.
-License: GPL-3.0
+License: GPL (>= 3)
 Imports: 
     config (>= 0.3.1),
     golem (>= 0.4.1),
