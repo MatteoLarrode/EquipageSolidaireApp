@@ -3,14 +3,80 @@
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
 #' @import shiny
+#' @import shinyWidgets
+#' @import shinythemes
+#'
 #' @noRd
 app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
+
     # Your application UI logic
     fluidPage(
-      h1("EquipageSolidaireApp")
+
+      # ---- Header & Intro ----
+      titlePanel(
+        h1("Equipage Solidaire: The App", align = "left")
+      ),
+
+      # ---- Main body ----
+      tabsetPanel(
+        type = "tab",
+
+        # ---- Map tab ----
+        tabPanel(
+          "Map",
+          fluidRow(
+            # 12 columns on one row: this panel will take 1/4 of it
+            column(3, wellPanel(
+              selectInput(
+                "election", "Choose an election: ",
+                c(
+                  "State legislative assembly" = "state",
+                  "Lok Sabha" = "lok_sabha"
+                )
+              ),
+            )),
+            column(
+              8,
+              sliderTextInput("map_year", "Year",
+                choices = 1990:2021,
+                selected = tail(1990:2021, n = 1),
+                grid = T,
+                width = "100%"
+              )
+            )
+          )
+        ),
+
+        # ---- Graphs tab ----
+
+        tabPanel(
+          "Graphs",
+          fluidRow(
+            # 12 columns on one row: this panel will take 1/4 of it
+            column(3, wellPanel(
+              selectInput(
+                "election", "Choose an election: ",
+                c(
+                  "State legislative assembly" = "state",
+                  "Lok Sabha" = "lok_sabha"
+                )
+              ),
+            )),
+            column(
+              8,
+              sliderTextInput("map_year", "Year",
+                              choices = 1990:2021,
+                              selected = tail(1990:2021, n = 1),
+                              grid = T,
+                              width = "100%"
+              )
+            )
+          )
+        )
+      )
     )
   )
 }
@@ -33,7 +99,7 @@ golem_add_external_resources <- function() {
     favicon(),
     bundle_resources(
       path = app_sys("app/www"),
-      app_title = "EquipageSolidaireApp"
+      app_title = "Equipage Solidaire: The App"
     )
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()

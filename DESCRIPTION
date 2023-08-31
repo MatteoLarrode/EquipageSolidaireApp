@@ -5,9 +5,15 @@ Authors@R: person('Matteo', 'Larrode', email = 'matteo@equipagesolidaire.fr', ro
 Description: An open access web app to explore the impact of L'Equipage Solidaire in fighting student precariousness in France.
 License: GPL (>= 3)
 Imports: 
+    attempt,
     config (>= 0.3.1),
+    DT,
+    glue,
     golem (>= 0.4.1),
-    shiny (>= 1.7.3)
+    htmltools,
+    shiny (>= 1.7.3),
+    shinythemes,
+    shinyWidgets
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
